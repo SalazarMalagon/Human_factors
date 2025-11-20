@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Planificación de Procesos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <i class="fas fa-tasks"></i> Simulador de Planificación de Procesos
+      </h1>
+
+      <div class="input-section">
+        <h2><i class="fas fa-database"></i> Datos de Entrada</h2>
+
+        <div class="config-section">
+          <div class="config-row">
+            <label for="quantum"><i class="fas fa-clock"></i> Quantum:</label>
+            <input
+              type="number"
+              id="quantum"
+              min="1"
+              value="5"
+              class="config-input"
+            />
+
+            <label for="algoritmo"
+              ><i class="fas fa-project-diagram"></i> Algoritmo:</label
+            >
+            <select id="algoritmo" class="config-input">
+              <option value="RR">Round Robin</option>
+              <option value="FCFS">First Come First Served</option>
+              <option value="SJF">Shortest Job First</option>
+              <option value="SRTF">Shortest Remaining Time First</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="proceso-table-header">
+          <div class="proceso-header-cell">Proceso</div>
+          <div class="proceso-header-cell">Llegada</div>
+          <div class="proceso-header-cell">Ejecución</div>
+          <div class="proceso-header-cell">Bloqueos</div>
+          <div class="proceso-header-cell">Acciones</div>
+        </div>
+
+        <div id="proceso-inputs">
+          <!-- Los procesos se agregarán aquí dinámicamente -->
+        </div>
+
+        <div class="action-buttons">
+          <button onclick="agregarProceso()" class="btn-add">
+            <i class="fas fa-plus"></i> Añadir Proceso
+          </button>
+          <button onclick="limpiarProcesos()" class="btn-clear">
+            <i class="fas fa-trash"></i> Limpiar Todo
+          </button>
+        </div>
+
+        <div class="simulate-section">
+          <button onclick="simular()" class="btn-simulate">
+            <i class="fas fa-play"></i> Ejecutar Simulación
+          </button>
+        </div>
+      </div>
+
+      <div class="results-section" id="resultados" style="display: none">
+        <h2><i class="fas fa-chart-bar"></i> Resultados de la Simulación</h2>
+
+        <div class="algorithm-info">
+          <h3 id="algorithm-name"></h3>
+          <p id="algorithm-desc"></p>
+        </div>
+
+        <div class="tabla-resultados">
+          <h3><i class="fas fa-table"></i> Estadísticas por Proceso</h3>
+          <div class="table-container">
+            <table id="tabla-procesos">
+              <thead>
+                <tr>
+                  <th>Proceso</th>
+                  <th>Ejecución (t)</th>
+                  <th>T. Respuesta (Tr)</th>
+                  <th>Espera</th>
+                  <th>Bloqueo</th>
+                  <th>Instante Fin (If)</th>
+                  <th>Retorno (T=If-Ii)</th>
+                  <th>T. Perdido (T - t)</th>
+                  <th>Penalidad (Ip=T/t)</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpo-tabla"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="metricas-globales">
+          <h3><i class="fas fa-calculator"></i> Métricas Globales</h3>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <h4><i class="fas fa-stopwatch"></i> Tiempo Total</h4>
+              <p id="tiempo-total">0</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-microchip"></i> Uso de CPU</h4>
+              <p id="uso-cpu">0%</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-balance-scale"></i>CPU en procesamiento</h4>
+              <p id="cpu-procesamiento">0</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-clock"></i> Promedio Retorno</h4>
+              <p id="prom-retorno">0</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-running"></i> Promedio Ejecución</h4>
+              <p id="prom-ejecucion">0</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-hourglass-half"></i> Promedio Espera</h4>
+              <p id="prom-espera">0</p>
+            </div>
+            <div class="metric-card">
+              <h4><i class="fas fa-balance-scale"></i> Promedio Penalidad</h4>
+              <p id="prom-penalidad">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-bottom: 10px;">
+        <h3 style="display: inline-block; margin: 0; font-size: 18px; color: #2c3e50;">
+          <i class="fas fa-stream"></i> Línea de Tiempo
+        </h3>
+      </div>
+
+    <div class="gantt-container" id="timeline-container"></div>
+    </div>
+    
+        
+    <script src="simulador.js"></script>
+  </body>
+</html>

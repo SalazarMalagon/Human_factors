@@ -1,0 +1,505 @@
+    /* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f8fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Sección de entrada */
+.input-section {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.config-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.config-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.config-input {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    width: 100px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.config-input:focus {
+    border-color: #4299e1;
+    outline: none;
+}
+
+/* Tabla de procesos */
+.proceso-table-header {
+    display: flex;
+    background-color: #edf2f7;
+    padding: 12px 8px;
+    font-weight: 600;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 2px;
+}
+
+.proceso-header-cell {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.proceso-header-cell:nth-child(4) {
+    flex: 2;
+}
+
+.proceso-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: white;
+    transition: background-color 0.2s;
+}
+
+.proceso-row:hover {
+    background-color: #f7fafc;
+}
+
+.proceso-cell {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+}
+
+.proceso-cell input {
+    width: 90%;
+    padding: 7px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.proceso-cell input:focus {
+    border-color: #4299e1;
+    outline: none;
+}
+
+.proceso-cell strong {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Bloques */
+.bloques-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bloque-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bloque-row input {
+    width: 70px;
+    padding: 5px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Botones */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-add, .btn-example, .btn-clear, .btn-simulate, .btn-bloque, .btn-remove {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-add {
+    background-color: #38a169;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #2f855a;
+}
+
+.btn-example {
+    background-color: #3182ce;
+    color: white;
+}
+
+.btn-example:hover {
+    background-color: #2b6cb0;
+}
+
+.btn-clear {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #c53030;
+}
+
+.btn-simulate {
+    background-color: #6b46c1;
+    color: white;
+    padding: 10px 22px;
+    font-size: 15px;
+}
+
+.btn-simulate:hover {
+    background-color: #553c9a;
+}
+
+.btn-bloque {
+    background-color: #718096;
+    color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.btn-bloque:hover {
+    background-color: #4a5568;
+}
+
+.btn-remove {
+    background-color: #e53e3e;
+    color: white;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+.btn-remove:hover {
+    background-color: #c53030;
+}
+
+.simulate-section {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* Sección de resultados */
+.results-section {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.algorithm-info {
+    background-color: #ebf8ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4299e1;
+}
+
+.algorithm-info h3 {
+    color: #2b6cb0;
+    margin-bottom: 5px;
+}
+
+.algorithm-info p {
+    margin: 0;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+/* Diagrama de Gantt */
+.gantt-container {
+    margin-bottom: 25px;
+}
+
+.gantt-chart {
+    display: flex;
+    margin: 15px 0;
+    overflow-x: auto;
+    height: 65px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.gantt-block {
+    min-width: 40px;
+    height: 50px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.gantt-block:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.gantt-time {
+    position: absolute;
+    bottom: -20px;
+    font-size: 10px;
+    color: #718096;
+    font-weight: normal;
+}
+
+/* Tabla de resultados */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    background-color: #edf2f7;
+    color: #4a5568;
+    font-weight: 600;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f7fafc;
+}
+
+/* Métricas globales */
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.metric-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid #4299e1;
+}
+
+.metric-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metric-card p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .config-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .proceso-header-cell, .proceso-cell {
+        min-width: 60px;
+    }
+    
+    .metric-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .metric-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-add, .btn-example, .btn-clear, .btn-simulate {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.gantt-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.gantt-label {
+    width: 50px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.gantt-bar {
+    display: flex;
+    height: 30px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.gantt-segment {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    transition: width 0.3s;
+    position: relative;
+    border-right: 1px solid #e2e8f0;
+    box-sizing: border-box;
+    
+}
+
+
+.gantt-segment:hover {
+    z-index: 2;
+    transform: scaleY(1.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Escala de tiempo */
+.gantt-timeline {
+    display: flex;
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+.gantt-tick {
+    width: 30px;
+    text-align: center;
+    font-size: 10px;
+    color: #718096;
+    font-family: monospace;
+}
+
+.btn-example {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.btn-example:hover {
+    background-color: #5a6268;
+}
+
