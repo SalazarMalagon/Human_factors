@@ -188,7 +188,7 @@ h3 {
 }
 
 .btn-add {
-    background-color: #22623F;
+    background-color: #38a169;
     color: white;
 }
 
@@ -206,7 +206,7 @@ h3 {
 }
 
 .btn-clear {
-    background-color: #AF1818;
+    background-color: #e53e3e;
     color: white;
 }
 
@@ -226,7 +226,7 @@ h3 {
 }
 
 .btn-bloque {
-    background-color: #50596D;
+    background-color: #718096;
     color: white;
     padding: 5px 10px;
     font-size: 13px;
@@ -237,7 +237,7 @@ h3 {
 }
 
 .btn-remove {
-    background-color: #AF1818;
+    background-color: #e53e3e;
     color: white;
     padding: 5px 8px;
     font-size: 12px;
@@ -502,4 +502,3 @@ tr:hover td {
 .btn-example:hover {
     background-color: #5a6268;
 }
-

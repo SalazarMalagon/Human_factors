@@ -831,7 +831,7 @@ function agregarProceso() {
         </div>
         <div class="proceso-cell">
             <button onclick="eliminarProceso(this)" class="btn-remove">
-                <i class="fas fa-trash"></i> Remove
+                <i class="fas fa-trash"></i>
             </button>
         </div>
     `;
